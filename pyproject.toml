@@ -39,8 +39,8 @@ dependencies = ["numpy>=2.2.5",
                 "sentencepiece>=0.1.99",
                 "ankh>=1.10.0",
                 "fair-esm==2.0.0",
-#                "inmoose@git+https://github.com/CalvinRusley/inmoose",
-                "inmoose>=0.8.1",
+                "inmoose@git+https://github.com/CalvinRusley/inmoose",
+#                "inmoose>=0.8.1",
                 "transformers>=4.49.0",
                 "torch>=2.6.0",
                 "scipy>=1.15.3",
@@ -74,6 +74,10 @@ include = [
   "peapod/*"
 ]
 only-packages = true
+
+# Set to true to allow references to my specific inmoose fork
+[tool.hatch.metadata]
+allow-direct-references = true
 
 # This tells Hatch to build the package from the src/me directory.
 # Read more about src layouts here: https://www.pyopensci.org/python-package-guide/package-structure-code/python-package-structure.html
