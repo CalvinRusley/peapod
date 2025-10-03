@@ -217,7 +217,7 @@ model = plms.load_extractor('ProstT5', 'residue', device=device)
 
 from peapod import methods
 from peapod import benchmark as bm
-homstrad_pair_dir = 'peapod/benchmarks/homstrad_circa20250812/fasta_files'
+homstrad_pair_dir = 'peapod_benchmarks/homstrad_circa20250812/fasta_files'
 homstrad_dict = bm.import_homstrad_pairs(homstrad_pair_dir)
 for key in homstrad_dict.keys():
     methods.batch_embed(homstrad_dict[key],model,padding=True)
