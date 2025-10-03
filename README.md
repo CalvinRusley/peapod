@@ -98,8 +98,8 @@ aln_global, global_aln_scored_matrix = aln.global_aln(S_enhanced_shifted, affine
 from peapod import pozitiv as poz
 mu, sigma = poz.pozitiv(S_enhanced_shifted,aln_global)
 poz_score = (aln_global.score-mu)/sigma
-print(poz_score)
-
+print('Raw score: ', aln_global.score)
+print('POZ score: ', poz_score)
 
 ### visualize scored matrix and alignment
 from peapod import visualize as viz
