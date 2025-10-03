@@ -37,7 +37,7 @@ keywords = ["protein","sequence","embedding","plm","alignment","aligner"]
 dependencies = ["numpy>=2.2.5",
                 "numba>=0.61.2",
                 "sentencepiece>=0.1.99",
-                "ankh>=1.10.0",
+                "ankh==1.10.0",
                 "fair-esm==2.0.0",
 #                "inmoose@git+https://github.com/CalvinRusley/inmoose",
 #                "inmoose>=0.8.1",

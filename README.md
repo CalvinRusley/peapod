@@ -23,6 +23,7 @@ Sequence alignment often masquerades as a singular choice, but is in fact severa
 You can install this package into your preferred Python environment using pip:
 
 ```bash
+$ python -m pip install --upgrade pip
 $ pip install peapod
 $ # OPTIONAL: download benchmarking data
 $ git clone https://github.com/CalvinRusley/peapod_benchmarks.git
