@@ -1,8 +1,10 @@
 #!/usr/bin/env python
+import os.path
 import numpy as np
 import numba as nb
 from numba.core import types
 from numba.typed import Dict
+from pathlib import Path
 from peapod import utilities as utils
 import torch
 from scipy import spatial
@@ -118,18 +120,23 @@ def _array_pair_to_nb_dict(keys,values):
 ################################################ Substitution matrix ################################################
 #####################################################################################################################
 
-def load_substitution_matrix(tsvfilename):
-    """ Load a tsv file of melted substitution matrix values as a numba typed dictionary.
+def load_substitution_matrix(name):
+    """ Load a substitution matrix values as a numba typed dictionary.
 
         Parameters:
-            tsvfilename (string): filepath to file containing melted substitution matrix values
+            name (string): name of a substitution matrix
 
         Returns:
-            matrix (matrix object): similarity matrix
+            substitution dictionary (numba-typed dict): dict of substitution scores
     """
     keys = []
     values = []
-    with open(tsvfilename) as f:
+    tsv_file = name.lower() + '.tsv'
+    path = Path(__file__).parent
+    subsitution_file = path / "substitutionmatrices" / tsv_file
+    if not os.path.isfile(subsitution_file):
+        raise Exception("Unfortunately, the subsitution matrix you've asked for hasn't been added to PEAPOD. Please create an issue on GitHub if you'd like us to add one.")
+    with open(subsitution_file) as f:
         for line in f:
             (key, value)=line.split()
             keys.append(key)
