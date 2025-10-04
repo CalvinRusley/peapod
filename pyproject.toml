@@ -34,16 +34,15 @@ classifiers = [
     "Programming Language :: Python :: 3 :: Only",
 ]
 keywords = ["protein","sequence","embedding","plm","alignment","aligner"]
-dependencies = ["numpy>=2.2.5",
+dependencies = ["numpy==2.3.3",
                 "numba>=0.61.2",
                 "sentencepiece>=0.1.99",
                 "ankh==1.10.0",
                 "fair-esm==2.0.0",
-#                "inmoose@git+https://github.com/CalvinRusley/inmoose",
 #                "inmoose>=0.8.1",
                 "inmoose-refbatchfix==0.8.2.dev0",
                 "transformers>=4.49.0",
-                "torch==2.1.0",
+                "torch==2.2.0",
                 "scipy>=1.15.3",
                 "pandas>=2.3.1",
                 "bokeh>=3.6.2",

@@ -27,7 +27,8 @@ $ python -m pip install --upgrade pip
 $ pip install peapod
 $ # OPTIONAL: download benchmarking data
 $ git clone https://github.com/CalvinRusley/peapod_benchmarks.git
-$ tar xvf peapod_benchmarks/homstrad_circa20250812/fasta_files.tar.gz
+$ cd peapod_benchmarks/homstrad_circa20250812/
+$ tar xvf fasta_files.tar.gz
 ```
 
 To use peapod in your code:
@@ -207,7 +208,7 @@ viz.summarize(global_aln_scored_matrix, [aln_global])
 
 
 ## Benchmarking on the HOMSTRAD database
-One way to benchmark pairwise aligners is by comparing the alignments they produce to reference pairwise alignments from the HOMSTRAD database (other benchmarks coming soon). These are distributed alongside PEAPOD as a nested dictionary of positions objects for easy access. To benchmark a method you've developed on the HOMSTRAD database:
+One way to benchmark pairwise aligners is by comparing the alignments they produce to reference pairwise alignments from the HOMSTRAD database (other benchmarks coming soon). These are distributed alongside PEAPOD (see above for instructions) as a nested dictionary of positions objects for ease of use. To benchmark a method you've developed on the HOMSTRAD database:
 
 ``` python
 import torch
