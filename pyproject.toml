@@ -34,7 +34,7 @@ classifiers = [
     "Programming Language :: Python :: 3 :: Only",
 ]
 keywords = ["protein","sequence","embedding","plm","alignment","aligner"]
-dependencies = ["numpy==2.3.3",
+dependencies = ["numpy>=2.0.2",
                 "numba>=0.61.2",
                 "sentencepiece>=0.1.99",
                 "ankh==1.10.0",
@@ -46,7 +46,7 @@ dependencies = ["numpy==2.3.3",
                 "scipy>=1.15.3",
                 "pandas>=2.3.1",
                 "bokeh>=3.6.2",
-                "holoviews>=1.21.0",
+                "holoviews>=1.20.2",
                 "pyarrow==17.0.0",
                 ]
 
