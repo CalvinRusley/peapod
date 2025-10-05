@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import numpy as np
 from peapod import utilities as utils
-from inmoose.pycombat import pycombat_norm
+from inmoose-refbatchfix.pycombat import pycombat_norm
 
 def batch_correct(profile_list,ref_batch = 0):
     """ Performs batch effect correction using an empirical Bayes framework as implemented in inmoose. 
