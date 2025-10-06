@@ -39,6 +39,7 @@ To use peapod in your code:
 
 ## Notes
 Visualizations in PEAPOD were designed for JupyterLab or another IDE that can display holoviews plots.
+PEAPOD only works on linux at present due to an issue with a dependency. This will ideally be resolved quickly and will then be available on macOS.
 
 ## Basic Tutorial
 ``` python
@@ -50,7 +51,7 @@ import numpy as np
 import torch
 from peapod import plms
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-model = plms.load_extractor('ProstT5', 'residue', device=device)
+model = plms.load_extractor('ProstT5', 'residue', device=device) # this can take a while if you're on CPU
 
 
 ### import fasta file as "profiles"
@@ -120,7 +121,7 @@ import numpy as np
 import torch
 from peapod import plms
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-model = plms.load_extractor('ProstT5', 'residue', device=device)
+model = plms.load_extractor('ProstT5', 'residue', device=device) # this can take a while if you're on CPU
 
 
 ### import fasta file as "profiles"

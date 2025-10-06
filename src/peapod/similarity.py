@@ -133,10 +133,11 @@ def load_substitution_matrix(name):
     values = []
     tsv_file = name.lower() + '.tsv'
     path = Path(__file__).parent
-    subsitution_file = path / "substitutionmatrices" / tsv_file
-    if not os.path.isfile(subsitution_file):
-        raise Exception("Unfortunately, the subsitution matrix you've asked for hasn't been added to PEAPOD. Please create an issue on GitHub if you'd like us to add one.")
-    with open(subsitution_file) as f:
+    substitution_file = path / "substitutionmatrices" / tsv_file
+    print("Loading " + tsv_file + " from " + substitution_file + "/substitutionmatrices/")
+    if not os.path.isfile(substitution_file):
+        raise Exception("Unfortunately, the substitution matrix you've asked for hasn't been added to PEAPOD. Please create an issue on GitHub if you'd like us to add one.")
+    with open(substitution_file) as f:
         for line in f:
             (key, value)=line.split()
             keys.append(key)
