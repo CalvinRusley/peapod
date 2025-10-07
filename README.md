@@ -38,8 +38,8 @@ To use peapod in your code:
 ```
 
 ## Notes
-Visualizations in PEAPOD were designed for JupyterLab or another IDE that can display holoviews plots.
-PEAPOD only works on linux at present due to an issue with a dependency. This will ideally be resolved quickly and will then be available on macOS.
+- Visualizations in PEAPOD were designed for JupyterLab or another IDE that can display holoviews plots.
+- PEAPOD only works on linux at present due to an issue with a dependency. This will ideally be fixed in the coming months.
 
 ## Basic Tutorial
 ``` python
