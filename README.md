@@ -19,7 +19,6 @@ Sequence alignment often masquerades as a singular choice, but is in fact severa
 - Are there positions you're very certain are aligned?
 
 ## Get started
-
 You can install this package into your preferred Python environment using pip:
 
 ```bash
@@ -31,15 +30,15 @@ $ cd peapod_benchmarks/homstrad_circa20250812/
 $ tar xvf fasta_files.tar.gz
 ```
 
-To use peapod in your code:
+## Troubleshooting
+If you plan to use GPUs, CUDA and PyTorch can be very finicky and sometimes don't play well with each other or with certain python versions. If you run into issues, remake your virtual environment after consulting the [PyTorch release compatibility matrix](https://github.com/pytorch/pytorch/blob/main/RELEASE.md#release-compatibility-matrix) and install the appropriate PyTorch before PEAPOD. If you still have issues, please post them to [PEAPOD's issues page](https://github.com/CalvinRusley/peapod/issues).
 
-```python
->>> import peapod
-```
+In our testing, a combination of python v3.9.16, torch v2.6.0, and a NVIDIA Tesla P100 GPU worked properly.
 
 ## Notes
 - Visualizations in PEAPOD were designed for JupyterLab or another IDE that can display holoviews plots.
-- PEAPOD only works on linux at present due to an issue with a dependency. This will ideally be fixed in the coming months.
+- At present, PEAPOD only works on linux due to an issue with a dependency. This will hopefully be fixed in the coming months.
+- If you are on a system that requires you to request compute hours, embedding benefits from GPUs, but everything downstream works fine on CPU.
 
 ## Basic Tutorial
 ``` python
@@ -51,7 +50,7 @@ import numpy as np
 import torch
 from peapod import plms
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-model = plms.load_extractor('ProstT5', 'residue', device=device) # this can take a while if you're on CPU
+model = plms.load_extractor('ProstT5', 'residue', device=device) # this can take a while
 
 
 ### import fasta file as "profiles"
@@ -121,7 +120,7 @@ import numpy as np
 import torch
 from peapod import plms
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-model = plms.load_extractor('ProstT5', 'residue', device=device) # this can take a while if you're on CPU
+model = plms.load_extractor('ProstT5', 'residue', device=device) # this can take a while
 
 
 ### import fasta file as "profiles"
